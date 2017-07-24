@@ -34,7 +34,7 @@ def sigmoid(inx):
 def initialize_v(n, k):
     '''初始化交叉项
     input:  n(int)特征的个数
-            k(int)FM模型的度
+            k(int)FM模型的交叉向量维度
     output: v(mat):交叉项的系数权重
     '''
     v = np.mat(np.zeros((n, k)))
