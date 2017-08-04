@@ -47,8 +47,8 @@ def choose_samples(data, k):
     for i in xrange(m):
         data_tmp = []
         for fea in feature:
-            data_tmp.append(data[i][fea])
-        data_tmp.append(data[i][-1])
+            data_tmp.append(data[index[i]][fea])
+        data_tmp.append(data[index[i]][-1])
         data_samples.append(data_tmp)
     return data_samples, feature
 
