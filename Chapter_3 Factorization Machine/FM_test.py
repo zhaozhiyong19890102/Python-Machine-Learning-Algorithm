@@ -52,13 +52,15 @@ def save_result(file_name, result):
     input:  file_name(string)需要保存的文件名
             result(mat):对测试数据的预测结果
     '''
-    f = open(file_name, "w")
-    f.write("\n".join(result))
-    f.close()
+    f_result = open(file_name, "w")
+    m = np.shape(result)[0]
+    for i in xrange(m):
+        f_result.write(str(result[i, 0]) + "\n")
+    f_result.close()
 
 if __name__ == "__main__":
     # 1、导入测试数据
-    dataTest = loadDataSet("data.txt")
+    dataTest = loadDataSet("data_test.txt")
     # 2、导入FM模型
     w0, w , v = loadModel("weights")
     # 3、预测
