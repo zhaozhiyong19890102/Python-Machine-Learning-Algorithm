@@ -68,7 +68,7 @@ def save_result(file_name, result):
     #输出预测结果到文件
     tmp = []
     for i in xrange(m):
-        tmp.append(str(h[i, 0]))
+        tmp.append(str(result[i, 0]))
     f_result = open(file_name, "w")
     f_result.write("\t".join(tmp))
     f_result.close()    
