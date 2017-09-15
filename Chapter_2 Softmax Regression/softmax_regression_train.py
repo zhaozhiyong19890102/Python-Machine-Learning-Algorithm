@@ -21,7 +21,7 @@ def load_data(inputfile):
         lines = line.strip().split("\t")
         for i in xrange(len(lines) - 1):
             feature_tmp.append(float(lines[i]))
-        label_data.append(float(lines[-1]))
+        label_data.append(int(lines[-1]))
         
         feature_data.append(feature_tmp)
     f.close()  # 关闭文件
