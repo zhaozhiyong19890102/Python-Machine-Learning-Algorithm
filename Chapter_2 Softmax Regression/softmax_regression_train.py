@@ -89,7 +89,7 @@ if __name__ == "__main__":
     feature, label, k = load_data(inputfile)
     # 2、训练Softmax模型
     print "---------- 2.training ------------"
-    weights = gradientAscent(feature, label, k, 5000, 0.2)
+    weights = gradientAscent(feature, label, k, 10000, 0.4)
     # 3、保存最终的模型
     print "---------- 3.save model ------------"
     save_model("weights", weights)
