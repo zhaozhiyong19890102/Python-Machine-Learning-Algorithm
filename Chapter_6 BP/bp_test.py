@@ -34,11 +34,11 @@ def generate_data():
         data[i, 1] = x[i, 1] * 9 - 4.5
     # 2、将数据点保存到文件“test_data”中
     f = open("test_data", "w")
-    m,n = np.shape(dataTest)
+    m,n = np.shape(data)
     for i in xrange(m):
         tmp =[]
         for j in xrange(n):
-            tmp.append(str(dataTest[i,j]))
+            tmp.append(str(data[i,j]))
         f.write("\t".join(tmp) + "\n")
     f.close()       
 
