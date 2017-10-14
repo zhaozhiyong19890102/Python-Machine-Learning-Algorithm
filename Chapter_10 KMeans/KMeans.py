@@ -60,7 +60,7 @@ def kmeans(data, k, centroids):
     while change == True:
         change = False  # 重置
         for i in xrange(m):
-            minDist = np.inf  # 设置样本与聚类中心之间的最小的距离，初始值为争取穷
+            minDist = np.inf  # 设置样本与聚类中心之间的最小的距离，初始值为正无穷
             minIndex = 0  # 所属的类别
             for j in xrange(k):
                 # 计算i和每个聚类中心之间的距离
