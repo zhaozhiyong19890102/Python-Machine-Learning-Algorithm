@@ -141,10 +141,10 @@ def save_model(trees_result, trees_feature, result_file, feature_file):
 if __name__ == "__main__":
     # 1、导入数据
     print "----------- 1、load data -----------"
-    data_train = load_data("data_2.txt")
+    data_train = load_data("data.txt")
     # 2、训练random_forest模型
     print "----------- 2、random forest training ------------"
-    trees_result, trees_feature = random_forest_training(data_train, 1)
+    trees_result, trees_feature = random_forest_training(data_train, 50)
     # 3、得到训练的准确性
     print "------------ 3、get prediction correct rate ------------"
     result = get_predict(trees_result, trees_feature, data_train)
