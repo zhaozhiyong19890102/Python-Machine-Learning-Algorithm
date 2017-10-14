@@ -23,8 +23,7 @@ def loadDataSet(data):
             lineArr.append(float(lines[i]))
         dataMat.append(lineArr)
         
-        #labelMat.append(float(lines[-1]) * 2 - 1)  # 转换成{-1,1}
-        labelMat.append(float(lines[-1]))
+        labelMat.append(float(lines[-1]) * 2 - 1)  # 转换成{-1,1}
     fr.close()
     return dataMat, labelMat
 
@@ -34,7 +33,7 @@ def sigmoid(inx):
 def initialize_v(n, k):
     '''初始化交叉项
     input:  n(int)特征的个数
-            k(int)FM模型的交叉向量维度
+            k(int)FM模型的超参数
     output: v(mat):交叉项的系数权重
     '''
     v = np.mat(np.zeros((n, k)))
@@ -174,7 +173,7 @@ if __name__ == "__main__":
     dataTrain, labelTrain = loadDataSet("data_1.txt")
     print "---------- 2.learning ---------"
     # 2、利用随机梯度训练FM模型
-    w0, w, v = stocGradAscent(np.mat(dataTrain), labelTrain, 2, 20000, 0.01)
+    w0, w, v = stocGradAscent(np.mat(dataTrain), labelTrain, 3, 10000, 0.01)
     predict_result = getPrediction(np.mat(dataTrain), w0, w, v)  # 得到训练的准确性
     print "----------training accuracy: %f" % (1 - getAccuracy(predict_result, labelTrain))
     print "---------- 3.save result ---------"
