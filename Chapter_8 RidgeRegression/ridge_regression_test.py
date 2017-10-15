@@ -55,7 +55,7 @@ def save_result(file_name, predict):
 if __name__ == "__main__":
     # 1、导入测试数据
     print "----------1.load data ------------"
-    testData = load_data("data.txt")
+    testData = load_data("data_test.txt")
     # 2、导入线性回归模型
     print "----------2.load model ------------"
     w = load_model("weights")
