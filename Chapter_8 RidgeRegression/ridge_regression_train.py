@@ -208,7 +208,7 @@ if __name__ == "__main__":
     if method == "bfgs":  # 选择BFGS训练模型
         w0 = bfgs(feature, label, 0.5, 1000)
     elif method == "lbfgs":  # 选择L-BFGS训练模型
-        w0 = lbfgs(feature, label, 0.5, 10, m=10)
+        w0 = lbfgs(feature, label, 0.5, 1000, m=10)
     else:  # 使用最小二乘的方法
         w0 = ridge_regression(feature, label, 0.5)
     # 3、保存最终的模型
