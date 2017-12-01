@@ -83,7 +83,7 @@ def stocGradAscent(dataMatrix, classLabels, k, max_iter, alpha):
         # 计算损失函数的值
         if it % 1000 == 0:
             print "\t------- iter: ", it, " , cost: ", \
-            getCost(getPrediction(np.mat(dataTrain), w0, w, v), classLabels)
+            getCost(getPrediction(np.mat(dataMatrix), w0, w, v), classLabels)
     
     # 3、返回最终的FM模型的参数
     return w0, w, v
